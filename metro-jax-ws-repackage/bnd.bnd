@@ -1,0 +1,15 @@
+Multi-Release: true
+
+Export-Package: com.sun.xml.ws.transport.http.servlet,\
+  com.sun.xml.ws.developer.servlet
+
+# javax.xml.catalog isn't really optional, but bnd has no support for multirelease jars
+# It should be mandatory on Java 9+ and missing on Java 8 or below
+Import-Package: \
+ javax.xml.catalog;resolution:=optional,\
+ !com.sun.org.apache.xml.internal.resolver,\
+ !com.sun.org.apache.xml.internal.resolver.tools,\
+ !jdk.internal.misc,\
+ *
+
+-includeresource: @servlet-2.3.3.jar, @jaxws-rt-2.3.3.jar, @saaj-impl-1.5.2.jar, @gmbal-4.0.1.jar
