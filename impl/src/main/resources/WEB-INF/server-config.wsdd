@@ -1,0 +1,12 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+  <service name="CalculatorService" provider="java:RPC">
+    <parameter name="className" value="com.paremus.example.webservice.impl.CalculatorServiceImpl"/>
+    <parameter name="allowedMethods" value="*"/>
+  </service>
+  <transport name="http">
+    <requestFlow>
+      <handler type="java:org.apache.axis.handlers.http.HTTPActionHandler"/>
+    </requestFlow>
+  </transport>
+</deployment>
